@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Classic Models Shop</title>
+    <link th:href="@{/css/bulma.min.css}" rel="stylesheet"></link>
+</head>
+<body>
+<section class="hero is-primary">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
+                Classic Models
+            </h1>
+            <h2 class="subtitle">
+                Offices
+            </h2>
+        </div>
+    </div>
+</section>
+<br>
+<br>
+<div class="container">
+    <table class="table">
+        <tr>
+            <th>Office Code</th>
+            <th>City</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>Address</th>
+            <th>State</th>
+            <th>Country</th>
+            <th>Postal Code</th>
+            <th>Territory</th>
+            <th></th>
+        </tr>
+        <tr th:each="office: ${offices}">
+            <td th:text="${office.officeCode}"></td>
+            <td th:text="${office.city}"></td>
+            <td th:text="${office.phone}"></td>
+            <td th:text="${office.addressLine1}"></td>
+            <td th:text="${office.addressLine2}"></td>
+            <td th:text="${office.state}"></td>
+            <td th:text="${office.country}"></td>
+            <td th:text="${office.postalCode}"></td>
+            <td th:text="${office.territory}"></td>
+
+            <td><a th:href="@{office(code=${office.officeCode})}" class="button is-primary">view</a></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
